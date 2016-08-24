@@ -21,11 +21,11 @@ require_once './EverySecond/EverySecond.php';
 			'transitionTime' => 0.2,
 			'showTime' => 2,
 			'restingCSS' => [
-				'transform' => 'translate(0,0) scale(1)',
+				'transform' => 'translateY(0)',
 				'opacity' => 0.5
 			],
 			'showingCSS' => [
-				'transform' => 'translate(0, 5px) scale(1.0253)',
+				'transform' => 'translateY(-3px)',
 				'opacity' => 1,
 				'box-shadow' => '0 25px 50px -20px rgba(0,0,0,0.2)'
 			],
@@ -34,7 +34,7 @@ require_once './EverySecond/EverySecond.php';
 					<div class="es-timer__title">
 						{{ title }}
 					</div>
-					<div class="es-loading-bar es-timer__loading-bar" style="animation-duration: {{ delay }}s;">
+					<div class="es-loading-bar es-timer__loading-bar" style="animation-duration: {{ delay }}s; animation-delay: {{ showTimeDelay }}s;">
 						<div class="es-loading-bar__text">Every {{ delay | round($v, 2) }}s</div>
 					</div>
 				</div>

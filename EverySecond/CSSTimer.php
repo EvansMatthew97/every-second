@@ -25,7 +25,7 @@ class CSSTimer {
 					<div class="es-timer__title">
 						{{ title }}
 					</div>
-					<div class="es-loading-bar es-timer__loading-bar" style="animation-duration: {{ delay }}s;">
+					<div class="es-loading-bar es-timer__loading-bar" style="animation-duration: {{ delay }}s; animation-delay: {{ showTimeDelay }}s;">
 						<div class="es-loading-bar__text">Every {{ delay }}s</div>
 					</div>
 				</div>
@@ -59,6 +59,8 @@ class CSSTimer {
 		
 		$transitionStartPercent = round($showStartPercent + $transitionRunPercent, 2);
 		$transitionEndPercent = round($showEndPercent - $transitionRunPercent, 2);
+
+		$this->config['showTimeDelay'] = $this->delay - (($this->showDuration + $this->transitionTime * 2) / 2);
 
 		$fwigger = new Fwigger();
 		$css = '@keyframes animation_' . $this->id . ' {
