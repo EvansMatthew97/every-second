@@ -22,7 +22,6 @@ body {
 	display: inline-block;
 	padding: 10px;
 	text-align: left;
-	backface-visibility: hidden;
 	&__body {
 		position: relative;
 		display: block;
@@ -42,6 +41,7 @@ body {
 		padding: 20px;
 		padding-top: 28px;
 		position: relative;
+		margin: 0;
 		&::after {
 			display: block;
 			content: 'DEATH BY';
@@ -52,6 +52,12 @@ body {
 			color: #fff;
 		}
 	}
+	@media (max-width: 800px) {
+		width: 50%;
+	}
+	@media (max-width: 480px) {
+		width: 100%;
+	}	
 }
 .es-loading-bar {
 	position: absolute;

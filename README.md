@@ -177,8 +177,8 @@ becomes
 ## class Fwigger
 A simple class for parsing templates.
 
-### public function simpleParse($html, $context) : string
-Parses template variables into their values defined in the context.
+### public function parse($html, $context) : string
+Parses PHP template variables into their values defined in the context.
 
 #### $html : string
 The template HTML to be parsed.
@@ -189,69 +189,28 @@ An array containing the template's variables' values as key => value pairs.
 __Usage__
 
 ```
-{{ variable }}
+<?=$variable?>
 
-or
-
-{{variable}}
-
-(spaces don't matter)
 ```
 
+Example:
 ```
 $fwigger = new Fwigger();
 
 $html = '
-	<p>{{myText}}</p>
-	<p>{{ subText }}</p>
+	<p><?=$myText?></p>
+	<p><?=round($theNumber, 1)?></p>
 ';
 $context = [
 	'myText' => 'Hello, world!',
-	'subText => 'This is sample text.'
+	'theNumber => 3.141
 ];
 
-echo $fwigger->simpleParse($html, $context); 
+echo $fwigger->parse($html, $context); 
 ```
 will output
 > Hello, world!<br />
-> This is sample text.
-
-### public function parse($html, $context = []) : string
-Parses template variables into their values defined in the context, but allows for "filters" to be applied to them.
-
-#### $html : string
-The template HTML to be parsed.
-
-#### $context : array
-An array containing the template's variables' values as key => value pairs.
-
-
-__Usage__
-
-```
-{{ variable | functionName(params ..., $v = variable, params ...) }}
-
-(spaces don't matter)
-```
-*variable* is the value from the context
-
-```
-$fwigger = new Fwigger();
-
-$html = '
-	<p>{{theNumber | round($v, 2)}}</p>
-	<p>{{ subText | strtoupper($v) }}</p>
-';
-$context = [
-	'theNumber' => 3.1415,
-	'subText => 'This is sample text.'
-];
-
-echo $fwigger->simpleParse($html, $context); 
-```
-will output
-> Hello, world!<br />
-> This is sample text.
+> 3.1
 
 ### public function parseCSSArray($cssArray : array) : string
 Transforms an array representation of CSS properties/values into a string representation.

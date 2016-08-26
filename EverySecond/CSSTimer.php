@@ -21,12 +21,12 @@ class CSSTimer {
 			'showingCSS' => [],
 			'template' => '
 			<div class="es-timer">
-				<div class="es-timer__body" style="animation: animation_{{ id }} {{ delay }}s infinite;">
-					<div class="es-timer__title">
-						{{ title }}
-					</div>
-					<div class="es-loading-bar es-timer__loading-bar" style="animation-duration: {{ delay }}s; animation-delay: {{ showTimeDelay }}s;">
-						<div class="es-loading-bar__text">Every {{ delay }}s</div>
+				<div class="es-timer__body" style="animation: animation_<?=$id?> <?=round($delay, 2)?>s infinite;">
+					<h2 class="es-timer__title">
+						<?=$title?>
+					</h2>
+					<div class="es-loading-bar es-timer__loading-bar" style="animation-duration: <?=round($delay, 2)?>s; animation-delay: <?=$showTimeDelay?>s;">
+						<div class="es-loading-bar__text">Every <?=round($delay, 2)?>s</div>
 					</div>
 				</div>
 			</div>'
@@ -63,12 +63,15 @@ class CSSTimer {
 		$this->config['showTimeDelay'] = $this->delay - (($this->showDuration + $this->transitionTime * 2) / 2);
 
 		$fwigger = new Fwigger();
+		$this->config['renderedRestingCSS'] = $fwigger->parseCSSArray($this->restingCSS, $this->config);
+		$this->config['renderedShowingCSS'] = $fwigger->parseCSSArray($this->showingCSS, $this->config);
+
 		$css = '@keyframes animation_' . $this->id . ' {
 					0%, 100%, ' . $showStartPercent . '%, ' . $showEndPercent . '% {
-						' . $fwigger->parseCSSArray($this->showingCSS, $this->config) . '
+						' . $this->config['renderedShowingCSS'] . '
 					}
 					' . $transitionStartPercent . '%, ' . $transitionEndPercent . '% {
-						' . $fwigger->parseCSSArray($this->restingCSS, $this->config) . '
+						' . $this->config['renderedRestingCSS'] . '
 					}
 				}';
 		

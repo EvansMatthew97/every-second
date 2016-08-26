@@ -1,13 +1,16 @@
 <?php
-require_once './EverySecond/EverySecond.php';
+require_once 'EverySecond/EverySecond.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>EverySecond</title>
 
 	<link rel="stylesheet" href="EverySecond/css/everysecond.css">
+	<!--[if lte IE 9]><link rel="stylesheet" href="EverySecond/css/everysecond-old.css"><![endif]-->
+	<!--[if lte IE 7]><link rel="stylesheet" href="EverySecond/css/everysecond-older.css"><![endif]-->
 </head>
 <body>
 	<div class="container">
@@ -30,12 +33,12 @@ require_once './EverySecond/EverySecond.php';
 				'box-shadow' => '0 25px 50px -20px rgba(0,0,0,0.2)'
 			],
 			'template' =>'<div class="es-timer">
-				<div class="es-timer__body" style="animation: animation_{{ id }} {{ delay }}s infinite; background: {{ colour }};">
-					<div class="es-timer__title">
-						{{ title }}
-					</div>
-					<div class="es-loading-bar es-timer__loading-bar" style="animation-duration: {{ delay }}s; animation-delay: {{ showTimeDelay }}s;">
-						<div class="es-loading-bar__text">Every {{ delay | round($v, 2) }}s</div>
+				<div class="es-timer__body" style="animation: animation_<?=$id?> <?=round($delay, 2)?>s infinite; background: <?=$colour?>;">
+					<h2 class="es-timer__title">
+						<?=$title?>
+					</h2>
+					<div class="es-loading-bar es-timer__loading-bar" style="animation-duration: <?=round($delay, 2)?>s; animation-delay: <?=$showTimeDelay?>s;">
+						<div class="es-loading-bar__text">Every <?=round($delay, 2)?>s</div>
 					</div>
 				</div>
 			</div>'

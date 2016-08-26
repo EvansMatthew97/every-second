@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,SAAU;EACT,OAAO,EAAE,MAAM;EACf,SAAS,EAAE,CAAC;EACZ,OAAO,EAAE,CAAC",
+"sources": ["everysecond-older.scss"],
+"names": [],
+"file": "everysecond-older.css"
+}
