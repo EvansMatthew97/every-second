@@ -8,6 +8,10 @@ require_once 'EverySecond/EverySecond.php';
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>EverySecond</title>
 
+	<meta name="keywords" content="every, second, timer, death" />
+	<meta name="description" content="This demo shows a simple timer that displays, according to WHO stats, how often someone dies." />
+	<meta name="author" content="Matthew Evans" />
+
 	<link rel="stylesheet" href="EverySecond/css/everysecond.css">
 	<!--[if lte IE 9]><link rel="stylesheet" href="EverySecond/css/everysecond-old.css"><![endif]-->
 	<!--[if lte IE 7]><link rel="stylesheet" href="EverySecond/css/everysecond-older.css"><![endif]-->
