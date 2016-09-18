@@ -3,9 +3,8 @@ by Matthew Evans (matt @ putu)
 
 # Table of contents
 1. What is it?
-2. Demo (an example use case)
-3. Why should I use it?
-4. Documentation
+2. Why should I use it?
+3. Documentation
 
 # What is it?
 
@@ -13,7 +12,7 @@ This is a pretty simple "framework" to help create a list of repeating timers th
 
 # Why should I use it?
 
-It might be easier to use than something else maybe.
+It might be easier to use than something else, maybe.
 
 # Documentation
 
