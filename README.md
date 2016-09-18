@@ -11,8 +11,6 @@ by Matthew Evans (matt @ putu)
 
 This is a pretty simple "framework" to help create a list of repeating timers that don't require any JavaScript.
 
-# Demo (an example use case)
-
 # Why should I use it?
 
 It might be easier to use than something else maybe.

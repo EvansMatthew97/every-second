@@ -6,7 +6,5 @@
 	["HIV/AIDS", 1.533e6, "#FFC107", "HIV/AIDS"],
 	["Diarrhoeal diseases", 1.4977e6, "#FF9800", "Diarrhea"],
 	["Diabetes Mellitus", 1.4973e6, "#795548", "Diabetes"],
-	["Road traffic accidents", 1.254e6, "#F44336", "Traffic_collision"],
-	["Hypertension", 1.141e6, "#4CAF50", "Hypertension"],
-	["Malaria", 0.618e6, "#c0f", "Malaria"]
+	["Road traffic accidents", 1.254e6, "#F44336", "Traffic_collision"]
 ]
