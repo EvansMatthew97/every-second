@@ -11,6 +11,8 @@ require_once 'EverySecond/EverySecond.php';
 	<link rel="stylesheet" href="EverySecond/css/everysecond.css">
 	<!--[if lte IE 9]><link rel="stylesheet" href="EverySecond/css/everysecond-old.css"><![endif]-->
 	<!--[if lte IE 7]><link rel="stylesheet" href="EverySecond/css/everysecond-older.css"><![endif]-->
+
+	<link rel="stylesheet" href="demo.css">
 </head>
 <body>
 	<div class="container">
@@ -33,22 +35,27 @@ require_once 'EverySecond/EverySecond.php';
 				'box-shadow' => '0 25px 50px -20px rgba(0,0,0,0.2)'
 			],
 			'template' =>'<div class="es-timer">
-				<div class="es-timer__body" style="animation: animation_<?=$id?> <?=round($delay, 2)?>s infinite; background: <?=$colour?>;">
+				<a class="es-timer__body" style="animation: animation_<?=$id?> <?=round($delay, 2)?>s infinite; background: <?=$colour?>;" href="https://en.wikipedia.org/wiki/<?=$url?>" target="_blank">
 					<h2 class="es-timer__title">
 						<?=$title?>
 					</h2>
 					<div class="es-loading-bar es-timer__loading-bar" style="animation-duration: <?=round($delay, 2)?>s; animation-delay: <?=$showTimeDelay?>s;">
 						<div class="es-loading-bar__text">Every <?=round($delay, 2)?>s</div>
 					</div>
-				</div>
+				</a>
 			</div>'
 		]);
 		$everySecondGenerator->render([
 			'title' => 0,
 			'delay' => 1,
 			'colour' => 2,
+			'url' => 3
 		], true);
 		?>
 	</div>
+	<footer>
+		<p>Matthew Evans 2016.</p>
+		<p>*Data is NOT live - it is based off of information from the World Health Organisation.</p>
+	</footer>
 </body>
 </html>
