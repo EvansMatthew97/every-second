@@ -12,6 +12,10 @@ body {
 	background: #252c41;
 }
 
+h1, .footer {
+	margin: 80px 0;
+}
+
 .c {
 	margin: 80px auto;
 	width: 1200px;
@@ -58,6 +62,13 @@ body {
 			opacity: 1;
 			border-radius: 0;
 			transform: rotate(0deg) scale(1.0);
+		}
+	}
+	&--as {
+		em,
+		i {
+			height: 100% !important;
+			width: 100% !important;
 		}
 	}
 	&__b {

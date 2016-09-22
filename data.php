@@ -9,7 +9,7 @@ $data = [
 	['title'=> 'Diabetes Mellitus', 'num'=> 1.4973, 'url'=> 'Diabetes_mellitus', 'colour' => '#7EA1E7'],
 	['title'=> 'Road traffic accidents', 'num'=> 1.254, 'url'=> 'Traffic_collision', 'colour' => '#E77EC6'],
 	['title'=> 'Hypertension', 'num'=> 1.141, 'url'=> 'Hypertension', 'colour' => '#EE9377'],
-	['title'=> 'Suicide', 'num'=> 0.803, 'url'=> 'Suicide', 'colour' => '#C67EE7'],
 	['title'=> 'Tuberculosis', 'num'=> 0.934, 'url'=> 'Tuberculosis', 'colour' => '#82B3E3'],
+	['title'=> 'Suicide', 'num'=> 0.803, 'url'=> 'Suicide', 'colour' => '#C67EE7'],
 	['title'=> 'Malaria', 'num'=> 0.618, 'url'=> 'Malaria', 'colour' => '#A2E382']
 ];

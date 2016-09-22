@@ -21,56 +21,60 @@ function http(url, callback) {
 }
 
 function setTimer(timer, time) {
-	time = parseFloat(time);
-	var rt = time - SHOW_TIME;
-	
-	timer.setAttribute('class', 'et');
-
-	var em = timer.firstChild.firstChild;
-	em.style.width = 0;
-	em.style.height = 0;
-	//em.style.opacity = 0;
-
-	var im = timer.firstChild.lastChild;
-	im.style.width = 0;
-	im.style.height = 0;
-	im.style.opacity = 0;
-
-	var ms = new Date().getTime();
-
-	var isAnimating = true;
-
-	function c(s) {
-		s = Math.min(100, s);
-		return s + '%';
-	}
-	
-	var anim = setInterval(function() {
-		if (!isAnimating) {
-			clearInterval(anim);
-		}
-		var sec = (new Date().getTime() - ms) / 1000;
-
-		var s = Math.max(0, (sec / rt * 100 * 4));
-		em.style.width = c(s);
-		em.style.height = c(s - 100);
+	if (timer.getAttribute('class').indexOf('et--as') == -1) {
+		time = parseFloat(time);
+		var rt = time - SHOW_TIME;
 		
-		if (s - 200 > 0) {
-			im.style.opacity = 1;
+		timer.setAttribute('class', 'et');
+
+		var b = timer.firstChild;
+
+		var em = b.firstChild;
+		em.style.width = 0;
+		em.style.height = 0;
+		//em.style.opacity = 0;
+
+		var im = b.lastChild;
+		im.style.width = 0;
+		im.style.height = 0;
+		im.style.opacity = 0;
+
+		var ms = new Date().getTime();
+
+		var isAnimating = true;
+
+		function c(s) {
+			s = Math.min(100, s);
+			return s + '%';
 		}
-		im.style.width = c(s - 200);
-		im.style.height = c(s - 300);
+		
+		var anim = setInterval(function() {
+			if (!isAnimating) {
+				clearInterval(anim);
+			}
+			var sec = (new Date().getTime() - ms) / 1000;
 
-	}, 1 / 60);
+			var s = Math.max(0, (sec / rt * 100 * 4));
+			em.style.width = c(s);
+			em.style.height = c(s - 100);
+			
+			if (s - 200 > 0) {
+				im.style.opacity = 1;
+			}
+			im.style.width = c(s - 200);
+			im.style.height = c(s - 300);
 
-	setTimeout(function() {
-		isAnimating = false;
-		timer.setAttribute('class', 'et et--s');
+		}, 1 / 60);
+
 		setTimeout(function() {
-			isAnimating = true;
-			setTimer(timer, time);
-		}, SHOW_TIME * 1000);
-	}, rt * 1000);
+			isAnimating = false;
+			timer.setAttribute('class', 'et et--s');
+			setTimeout(function() {
+				isAnimating = true;
+				setTimer(timer, time);
+			}, SHOW_TIME * 1000);
+		}, rt * 1000);
+	}
 }
 
 (function() {

@@ -51,7 +51,11 @@ class Timer {
 	}
 
 	public function render() {
-		$per = round(1 / (1000000 * $this->num / $this->per), 1);
+		$per = round(1 / (1000000 * $this->num / $this->per), 2);
+		$death = true;
+		if (isset($this->death)) {
+			$death = $this->death;
+		}
 		echo '<div class="et" ';
 
 		echo 'e="' . $per . '"';
@@ -61,7 +65,7 @@ class Timer {
 		echo '<div class="et__bg" style="background: ' . $this->colour . ';"></div>';
 
 		echo '<h2 class="et__t">' . $this->title . '</h2>';
-		echo '<div class="et__bar">Death every ' . $per . 's</div>';
+		echo '<div class="et__bar">' . ($death ? 'Death' : '') . ' every ' . $per . 's</div>';
 		echo '<a href="?s=' . str_replace(' ', '%20', $this->url) . '" class="et__l">More Info</a>';
 
 		echo '<i></i></div></div>';
