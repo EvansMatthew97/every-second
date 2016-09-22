@@ -31,6 +31,9 @@ h1, .footer {
 	width: 100%;
 	height: 100%;
 }
+a {
+	color: #fff;
+}
 
 .es-button {
 	color: #eee;
@@ -181,6 +184,12 @@ h1, .footer {
 		line-height: 1.5;
 		font-family: 'Georgia', serif;
 		font-size: 14pt;
+		a {
+			color: #555;
+			&:hover {
+				color: #777;
+			}
+		}
 	}
 	&__close {
 		@extend .bg;

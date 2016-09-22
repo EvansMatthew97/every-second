@@ -4,7 +4,7 @@ require_once 'data.php';
 global $data;
 ?> <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"><title>Every Second</title><link rel="stylesheet" href="./assets/css/style.css"></head><body id="page"><div class="header"><h1>Every Second</h1></div><div class="c"> <?php
 		if (isset($_GET['s'])) {
-			echo '<a href="index.php" class="backbtn">Back</a>';
+			echo '<a href="index.php" class="backbtn es-button">Back</a>';
 			include 'page.php';
 		}
 		else {

@@ -21,7 +21,7 @@ global $data;
 	<div class="c">
 		<?php
 		if (isset($_GET['s'])) {
-			echo '<a href="index.php" class="backbtn">Back</a>';
+			echo '<a href="index.php" class="backbtn es-button">Back</a>';
 			include 'page.php';
 		}
 		else {
